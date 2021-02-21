@@ -1,0 +1,19 @@
+{
+  "name": "teste-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gileade/Teste-Backend-Node.git"
+  },
+  "author": "Gileade Trindade Silva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Gileade/Teste-Backend-Node/issues"
+  },
+  "homepage": "https://github.com/Gileade/Teste-Backend-Node#readme"
+}
