@@ -9,7 +9,7 @@ module.exports = app => {
 
             return res.status(200).json(boleto)
         } catch (error) {
-            return res.status(400).json({error: err.message})
+            return res.status(400).json({error: error.message})
         }
     })
 }
