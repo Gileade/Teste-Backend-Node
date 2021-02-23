@@ -1,13 +1,18 @@
 const BoletoService = require('../services/BoletoService')
+//const ConvenioService = require('../services/ConvenioService')
+const TituloService = require('../services/TituloService')
 
 module.exports = app => {
-    app.get('/boleto/:boleto', (req, res) =>{
+    app.get('/boleto/:numBoleto', (req, res) =>{
         try {
-            const numeroDoBoletoRecebido = req.params.boleto
-    
-            const boleto = BoletoService.validarBoleto(numeroDoBoletoRecebido, res)
+            const numeroDoBoletoRecebido = req.params.numBoleto
+            
+            BoletoService.validarBoleto(numeroDoBoletoRecebido)
+            const corpo = BoletoService.verificaTituloConvenio(numeroDoBoletoRecebido) === 'TITULO' 
+            ? TituloService.validarTitulo(numeroDoBoletoRecebido)
+            : '{}'
 
-            return res.status(200).json(boleto)
+            return res.status(200).json(corpo)
         } catch (error) {
             return res.status(400).json({error: error.message})
         }
