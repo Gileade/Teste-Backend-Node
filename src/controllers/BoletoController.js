@@ -1,5 +1,5 @@
 const BoletoService = require('../services/BoletoService')
-//const ConvenioService = require('../services/ConvenioService')
+const ConvenioService = require('../services/ConvenioService')
 const TituloService = require('../services/TituloService')
 
 module.exports = app => {
@@ -8,9 +8,10 @@ module.exports = app => {
             const numeroDoBoletoRecebido = req.params.numBoleto
             
             BoletoService.validarBoleto(numeroDoBoletoRecebido)
+            
             const corpo = BoletoService.verificaTituloConvenio(numeroDoBoletoRecebido) === 'TITULO' 
             ? TituloService.validarTitulo(numeroDoBoletoRecebido)
-            : '{}'
+            : ConvenioService.validaConvenio(numeroDoBoletoRecebido)
 
             return res.status(200).json(corpo)
         } catch (error) {

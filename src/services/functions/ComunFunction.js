@@ -1,3 +1,15 @@
+const retornaDVModulo10 = (campo) => {
+    const arrayDeNumeros = retornaArrayComOsNumeros(campo)
+    const numerosMultiplicados = retornaMultiplicacaoDosNumerosPorDoisEUm(arrayDeNumeros)
+    const somaTotalDoCampo = retornaSomaTotalDoCampo(numerosMultiplicados)
+  
+    const resto = somaTotalDoCampo % 10
+    const dezena = (Math.floor(somaTotalDoCampo / 10) + 1) * 10
+    const DV = (dezena - resto) % 10
+  
+    return DV
+}
+
 const retornaArrayComOsNumeros = (campo) => {
     const campoArray = campo.split('')
   
@@ -44,8 +56,42 @@ const retornaSomaTotalDoCampo = (numeros) => {
     return soma
 }
 
+const validacaoDigitosVerificadores = (digitosValidados, digitosVerificadores) => {
+    if (digitosValidados.digitoCampo1 !== digitosVerificadores.digitoCampo1) {
+      throw new Error(
+        message = `DV do campo 1 está incorreto! O DV esperado é ${digitosValidados.digitoCampo1}, DV recebido é ${digitosVerificadores.digitoCampo1}`
+      )
+    }
+  
+    if (digitosValidados.digitoCampo2 !== digitosVerificadores.digitoCampo2) {
+      throw new Error(
+        message = `DV do campo 2 está incorreto! O DV esperado é ${digitosValidados.digitoCampo2}, DV recebido é ${digitosVerificadores.digitoCampo2}`
+      )
+    }
+  
+    if (digitosValidados.digitoCampo3 !== digitosVerificadores.digitoCampo3) {
+      throw new Error(
+        message = `DV do campo 3 está incorreto! O DV esperado é ${digitosValidados.digitoCampo3}, DV recebido é ${digitosVerificadores.digitoCampo3}`
+      )
+    }
+  
+    if (digitosValidados.digitoCampo4 !== digitosVerificadores.digitoCampo4) {
+      throw new Error(
+        message = `DV do campo 4 está incorreto! O DV esperado é ${digitosValidados.digitoCampo4}, DV recebido é ${digitosVerificadores.digitoCampo4}`
+      )
+    }
+
+    if (digitosValidados.digitoGeral !== digitosVerificadores.digitoGeral) {
+      throw new Error(
+        `DV Geral está incorreto! O DV esperado é ${digitosValidados.digitoGeral}, DV recebido é ${digitosVerificadores.digitoGeral}`
+      )
+    }
+}
+
 module.exports = {
+    retornaDVModulo10,
     retornaArrayComOsNumeros,
     retornaMultiplicacaoDosNumerosPorDoisEUm,
-    retornaSomaTotalDoCampo
+    retornaSomaTotalDoCampo,
+    validacaoDigitosVerificadores
   }

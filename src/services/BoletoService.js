@@ -7,7 +7,7 @@ const validarBoleto = (boleto) => {
         throw new Error(message = 'O Código inserido está com menos dígitos que o esperado')
     }
 
-    if (boleto.length > 47){
+    if (boleto.length > 48){
         throw new Error(message = 'O Código inserido está com mais dígitos que o esperado')
     }
 }

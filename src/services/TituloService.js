@@ -1,4 +1,5 @@
 const funcoesTitulo = require("./functions/TituloFunction")
+const funcoesComuns = require("./functions/ComunFunction")
 
 const validarTitulo = (boleto) => {
   const campos = {
@@ -30,9 +31,9 @@ const validarTitulo = (boleto) => {
     posicoesCodigoDeBarras.pos35a44
 
   const digitosValidados = {
-    digitoCampo1: funcoesTitulo.retornaDVModulo10(campos.campo1.slice(0, 9)),
-    digitoCampo2: funcoesTitulo.retornaDVModulo10(campos.campo2.slice(0, 10)),
-    digitoCampo3: funcoesTitulo.retornaDVModulo10(campos.campo3.slice(0, 10)),
+    digitoCampo1: funcoesComuns.retornaDVModulo10(campos.campo1.slice(0, 9)),
+    digitoCampo2: funcoesComuns.retornaDVModulo10(campos.campo2.slice(0, 10)),
+    digitoCampo3: funcoesComuns.retornaDVModulo10(campos.campo3.slice(0, 10)),
     digitoCampo4: funcoesTitulo.retornaDVModulo11(codigoDeBarraNaoValidado)
   }
 
@@ -43,7 +44,7 @@ const validarTitulo = (boleto) => {
     digitoCampo4: Number(campos.campo4)
   }
 
-  funcoesTitulo.validacaoDigitosVerificadores(digitosValidados, digitosVerificadores)
+  funcoesComuns.validacaoDigitosVerificadores(digitosValidados, digitosVerificadores)
 
   const codigoDeBarraValidado =
     siloc +
@@ -57,9 +58,7 @@ const validarTitulo = (boleto) => {
 
   const valorBoleto = (parseFloat(campos.campo5.slice(4, 14)) / 100).toFixed(2);
 
-  const a = funcoesTitulo.montaResposta(codigoDeBarraValidado, valorBoleto, vencimento)
-  console.log(a);
-  return a
+  return funcoesTitulo.montaResposta(codigoDeBarraValidado, valorBoleto, vencimento)
 }
 
 module.exports = {
