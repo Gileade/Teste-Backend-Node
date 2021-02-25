@@ -1,7 +1,7 @@
 const funcoesConvenio = require("./functions/ConvenioFunction")
 const funcoesComuns = require("./functions/ComunFunction")
 
-const validaConvenio = (boleto) => {
+const validarConvenio = (boleto) => {
   const campos = {
     campo1: boleto.slice(0, 12),
     campo2: boleto.slice(12, 24),
@@ -69,5 +69,5 @@ const validaConvenio = (boleto) => {
 }
 
 module.exports = {
-  validaConvenio
+  validarConvenio
 }

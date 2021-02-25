@@ -11,7 +11,7 @@ module.exports = app => {
             
             const corpo = BoletoService.verificaTituloConvenio(numeroDoBoletoRecebido) === 'TITULO' 
             ? TituloService.validarTitulo(numeroDoBoletoRecebido)
-            : ConvenioService.validaConvenio(numeroDoBoletoRecebido)
+            : ConvenioService.validarConvenio(numeroDoBoletoRecebido)
 
             return res.status(200).json(corpo)
         } catch (error) {

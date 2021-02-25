@@ -57,25 +57,25 @@ const retornaSomaTotalDoCampo = (numeros) => {
 }
 
 const validacaoDigitosVerificadores = (digitosValidados, digitosVerificadores) => {
-    if (digitosValidados.digitoCampo1 !== digitosVerificadores.digitoCampo1) {
+    if (digitosValidados.digito1 !== digitosVerificadores.digito1) {
       throw new Error(
         message = `DV do campo 1 está incorreto! O DV esperado é ${digitosValidados.digitoCampo1}, DV recebido é ${digitosVerificadores.digitoCampo1}`
       )
     }
   
-    if (digitosValidados.digitoCampo2 !== digitosVerificadores.digitoCampo2) {
+    if (digitosValidados.digito2 !== digitosVerificadores.digito2) {
       throw new Error(
         message = `DV do campo 2 está incorreto! O DV esperado é ${digitosValidados.digitoCampo2}, DV recebido é ${digitosVerificadores.digitoCampo2}`
       )
     }
   
-    if (digitosValidados.digitoCampo3 !== digitosVerificadores.digitoCampo3) {
+    if (digitosValidados.digito3 !== digitosVerificadores.digito3) {
       throw new Error(
         message = `DV do campo 3 está incorreto! O DV esperado é ${digitosValidados.digitoCampo3}, DV recebido é ${digitosVerificadores.digitoCampo3}`
       )
     }
   
-    if (digitosValidados.digitoCampo4 !== digitosVerificadores.digitoCampo4) {
+    if (digitosValidados.digito4 !== digitosVerificadores.digito4) {
       throw new Error(
         message = `DV do campo 4 está incorreto! O DV esperado é ${digitosValidados.digitoCampo4}, DV recebido é ${digitosVerificadores.digitoCampo4}`
       )

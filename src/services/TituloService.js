@@ -31,17 +31,17 @@ const validarTitulo = (boleto) => {
     posicoesCodigoDeBarras.pos35a44
 
   const digitosValidados = {
-    digitoCampo1: funcoesComuns.retornaDVModulo10(campos.campo1.slice(0, 9)),
-    digitoCampo2: funcoesComuns.retornaDVModulo10(campos.campo2.slice(0, 10)),
-    digitoCampo3: funcoesComuns.retornaDVModulo10(campos.campo3.slice(0, 10)),
-    digitoCampo4: funcoesTitulo.retornaDVModulo11(codigoDeBarraNaoValidado)
+    digito1: funcoesComuns.retornaDVModulo10(campos.campo1.slice(0, 9)),
+    digito2: funcoesComuns.retornaDVModulo10(campos.campo2.slice(0, 10)),
+    digito3: funcoesComuns.retornaDVModulo10(campos.campo3.slice(0, 10)),
+    digito4: funcoesTitulo.retornaDVModulo11(codigoDeBarraNaoValidado)
   }
 
   const digitosVerificadores = {
-    digitoCampo1: Number(campos.campo1.slice(9, 10)),
-    digitoCampo2: Number(campos.campo2.slice(10, 11)),
-    digitoCampo3: Number(campos.campo3.slice(10, 11)),
-    digitoCampo4: Number(campos.campo4)
+    digito1: Number(campos.campo1.slice(9, 10)),
+    digito2: Number(campos.campo2.slice(10, 11)),
+    digito3: Number(campos.campo3.slice(10, 11)),
+    digito4: Number(campos.campo4)
   }
 
   funcoesComuns.validacaoDigitosVerificadores(digitosValidados, digitosVerificadores)
